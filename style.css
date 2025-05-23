@@ -1,34 +1,39 @@
+/* Reset and base */
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* fixed typo 'border: border-box' */
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
 }
 
+/* Navbar */
 .navbar {
     height: 60px;
     background-color: #0f1111;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 0 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-/* nav-logo */
+/* Logo */
 .nav-logo {
     background-image: url(amazon_logo.png);
-    height: 3rem; /* responsive height */
-    width: 6rem;  /* responsive width */
+    height: 3rem; /* 48px */
+    width: 6rem;  /* 96px */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     flex-shrink: 0;
 }
 
+/* Border hover effect */
 .border {
     border: 1.5px solid transparent;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, padding 0.3s ease;
 }
 
 .border:hover {
@@ -37,53 +42,55 @@
     border-radius: 1px;
 }
 
-/* add-icon */
+/* Add-icon box */
 .add-icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .add-1 {
     color: #cccccc;
     font-size: 0.8rem;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
 }
 
 .add-2 {
     font-size: 1rem;
-    margin-left: 0.625rem;
+    margin-left: 0.25rem;
 }
 
-/* nav_search */
+/* Search bar */
 .nav_search {
     display: flex;
-    justify-content: space-evenly;
     background-color: orange;
-    max-width: 100%;
-    width: 40rem; /* 620px approx */
-    height: 2.5rem; /* 40px */
-    border-radius: 0.1875rem; /* 3px */
     flex-grow: 1;
-    min-width: 250px;
+    max-width: 600px;
+    height: 2.5rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
     margin: 0 1rem;
-    transition: border 0.3s ease;
 }
 
 .nav_search:hover {
     border: 2px solid orange;
 }
 
+/* Search select dropdown */
 .select-search {
     background-color: #f3f3f3;
     width: 3rem;
     text-align: center;
-    border-top-left-radius: 0.25rem;
-    border-bottom-left-radius: 0.25rem;
     border: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     font-size: 1rem;
 }
 
+/* Search input */
 .search-input {
     background-color: #f3f3f3;
     padding-left: 1rem;
@@ -92,6 +99,7 @@
     border: none;
 }
 
+/* Search icon */
 .search-icon {
     width: 2.8rem;
     display: flex;
@@ -99,8 +107,8 @@
     align-items: center;
     font-size: 1.2rem;
     background-color: #febd68;
-    border-top-right-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -114,25 +122,31 @@ span {
     font-size: 0.7rem;
 }
 
+/* Nav-2 text */
 .nav-2 {
     font-size: 0.8rem;
     font-weight: 700;
 }
 
-/* cart */
+/* Cart icon */
 .nav-cart i {
-    font-size: 1.9375rem; /* 31px */
+    font-size: 31px;
 }
 
 .nav-cart {
     font-size: 0.85rem;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-/* panel */
+/* Panel */
 .panel {
     font-size: 1rem;
-    height: 2.5rem; /* 40px */
+    height: 40px;
     background-color: #222f3d;
     color: white;
     display: flex;
@@ -140,59 +154,62 @@ span {
     justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 0 1rem;
+    gap: 10px;
 }
 
 .panel_all {
     font-size: 1.1rem;
     font-weight: 600;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 10px;
+    flex-grow: 1;
 }
 
 .panel_all i {
-    font-size: 1.875rem; /* 30px */
-    margin-right: 0.3125rem; /* 5px */
+    text-align: center;
+    font-size: 1.8rem;
+    margin-right: 5px;
 }
 
 .panel-options p {
-    display: inline;
-    margin-left: 1.25rem;
+    display: inline-block;
+    margin-left: 20px;
     font-weight: 200;
+    white-space: nowrap;
 }
 
-/* hero-section */
+/* Hero Section */
 .hero-section {
     background-image: url(bg-img.jpg);
-    height: 22rem; /* ~350px */
+    height: 350px;
     background-size: cover;
     background-position: center;
 }
 
-/* shop-section */
+/* Shop Section */
 .shop-section {
-    margin-top: 0.125rem;
+    margin-top: 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: #e2e7e6;
-    gap: 1rem;
-    padding: 1rem 0;
 }
 
+/* Each product box */
 .box {
-    margin-top: 0.625rem;
-    height: 20rem; /* 320px */
-    width: 22%;
-    min-width: 200px;
+    margin-top: 10px;
+    height: 320px;
+    width: 23%;
     background-color: white;
-    padding: 1.25rem 0.5rem 0.9375rem;
+    padding: 20px 0 15px;
+    margin-bottom: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .box-content {
@@ -201,8 +218,8 @@ span {
 }
 
 .box-img {
-    margin-top: 1.25rem;
-    height: 13.75rem; /* 220px */
+    margin-top: 20px;
+    height: 220px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -213,7 +230,6 @@ span {
     margin-bottom: 1rem;
     font-size: 1rem;
     display: inline;
-    transition: color 0.3s ease;
 }
 
 .box-content p:hover {
@@ -222,23 +238,21 @@ span {
     cursor: pointer;
 }
 
-/* footer */
+/* Footer Panels */
 footer {
-    margin-top: 0.3125rem;
+    margin-top: 5px;
     color: white;
-    font-size: 0.9rem;
 }
 
 .foot-panel1 {
     display: flex;
     background-color: #374751;
     color: white;
-    height: 3.125rem; /* 50px */
+    height: 50px;
     text-align: center;
     justify-content: center;
     align-items: center;
     font-size: 0.9rem;
-    padding: 0 1rem;
 }
 
 .foot-panel2 {
@@ -247,12 +261,10 @@ footer {
     justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 1rem 0;
-    gap: 2rem;
 }
 
 ul {
-    margin: 1.25rem 0;
-    padding: 0;
+    margin: 20px 0;
     list-style: none;
 }
 
@@ -260,7 +272,7 @@ ul {
     text-decoration: none;
     color: #dddddd;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
     font-size: 0.7rem;
 }
 
@@ -271,7 +283,7 @@ ul {
 
 .foot-panel2 p {
     font-weight: bold;
-    margin-bottom: 0.4375rem;
+    margin-bottom: 7px;
 }
 
 .foot-panel3 {
@@ -281,37 +293,36 @@ ul {
     background-color: #222f3d;
     color: white;
     border-top: 1px solid white;
-    height: 4.375rem; /* 70px */
-    padding: 0 1rem;
+    height: 70px;
 }
 
 .foot-logo {
     background-image: url(amazon_logo.png);
-    height: 3.125rem; /* 50px */
-    width: 6rem; /* 100px */
+    height: 50px;
+    width: 100px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .foot-panel4 {
-    height: 6.25rem; /* 100px */
+    height: 100px;
     background-color: #0f1111;
     color: white;
-    text-align: center;
 }
 
 .pages {
     font-size: 0.8rem;
+    text-align: center;
     color: white;
-    padding-top: 1.5rem;
+    padding-top: 25px;
 }
 
 .pages a {
     text-decoration: none;
     color: white;
     font-size: 0.9rem;
-    margin-left: 0.9375rem; /* 15px */
+    margin-left: 15px;
 }
 
 .pages a:hover {
@@ -320,79 +331,131 @@ ul {
 }
 
 .copyright {
-    margin-top: 0.5rem;
+    margin-top: 8px;
     font-size: 0.7rem;
     text-align: center;
 }
 
-/* Responsive breakpoints */
+/* ================== Responsive Media Queries ================== */
+
+/* Medium tablets and smaller */
 @media (max-width: 1024px) {
     .box {
         width: 45%;
     }
-    .nav_search {
-        width: 100%;
-        max-width: none;
-        margin: 1rem 0;
-    }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
     .navbar {
         justify-content: center;
-        gap: 1rem;
+        gap: 0.5rem;
+        height: auto;
+        padding: 0.5rem 1rem;
     }
-    .box {
-        width: 90%;
-        margin: 0.5rem auto;
-    }
-    .add-1 {
-        margin-left: 1rem;
-        font-size: 0.75rem;
-    }
-    .add-2 {
-        margin-left: 0.5rem;
-        font-size: 0.9rem;
-    }
-    .panel_all, .panel-options p {
-        font-size: 0.9rem;
-        margin-left: 0.5rem;
-    }
-}
 
-@media (max-width: 480px) {
     .nav-logo {
         height: 2.5rem;
         width: 5rem;
     }
+
     .nav_search {
-        flex-direction: column;
-        height: auto;
-        padding: 0.5rem;
+        max-width: 100%;
+        margin: 0.5rem 0;
+        height: 2.5rem;
     }
-    .select-search,
-    .search-input,
-    .search-icon {
-        width: 100%;
-        border-radius: 0.25rem;
-        margin-bottom: 0.25rem;
+
+    .add-icon, .nav-cart {
+        gap: 0.25rem;
+        font-size: 0.9rem;
     }
-    .box {
-        width: 100%;
-        height: auto;
-        padding: 1rem;
-    }
+
     .panel {
+        justify-content: center;
         font-size: 0.9rem;
         height: auto;
         padding: 0.5rem 1rem;
     }
+
+    .panel_all {
+        font-size: 1rem;
+        gap: 5px;
+        justify-content: center;
+    }
+
     .panel_all i {
         font-size: 1.5rem;
-        margin-right: 0.25rem;
+        margin-right: 3px;
     }
+
+    .panel-options p {
+        margin-left: 10px;
+        font-size: 0.85rem;
+    }
+
+    .box {
+        width: 48%;
+        height: auto;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .nav_search {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .add-icon, .nav-cart {
+        font-size: 0.85rem;
+    }
+
+    .panel {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0.5rem;
+        height: auto;
+    }
+
+    .panel_all {
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .panel_all i {
+        font-size: 1.3rem;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .panel-options p {
+        margin-left: 0;
+        margin-bottom: 5px;
+        white-space: normal;
+        font-size: 0.8rem;
+    }
+
+    .box {
+        width: 95%;
+        margin: 10px auto;
+        height: auto;
+    }
+
     .foot-panel2 {
         flex-direction: column;
         align-items: center;
+    }
+
+    .foot-panel2 ul {
+        margin: 10px 0;
+        text-align: center;
     }
 }
